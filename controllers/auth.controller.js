@@ -31,15 +31,15 @@ exports.login = asyncHandler(async (req, res, next) => {
   const refreshToken = user.generateRefreshToken();
   res.cookie("accessToken", accessToken, {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "none",
     maxAge: 15 * 60 * 1000,
   });
 
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "none",
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
   user.refreshToken = refreshToken;
@@ -83,8 +83,8 @@ exports.refreshToken = asyncHandler(async (req, res, next) => {
 
   res.cookie("accessToken", newAccessToken, {
     httpOnly: true,
-    secure: false,
-    sameSite: "lax",
+    secure: true,
+    sameSite: "none",
     maxAge: 15 * 60 * 1000,
   });
 
