@@ -12,7 +12,7 @@ const app = express();
 app.use(cookieParser());
 
 app.use(cors({
-    origin: "https://bog-post.vercel.app/",
+    origin: "https://bog-post.vercel.app",
     credentials: true,
 }))
 app.use(express.json());

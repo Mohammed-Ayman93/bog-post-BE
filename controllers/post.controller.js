@@ -22,7 +22,7 @@ exports.createPost = asyncHandler(async (req, res, next) => {
 });
 
 exports.getPosts = asyncHandler(async (req, res, next) => {
-    try {
+    try {        
         const { title, author, image } = req.query;
         const posts = await Post.find().populate("author", ["name", "profilePic"]).sort({createdAt : -1});
         res.status(200).json(posts);

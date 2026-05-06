@@ -5,7 +5,7 @@ const AppError = require("../utils/appError");
 
 exports.protect = asyncHandler(async (req, res, next) => {  
   try {
-    console.log(req.cookies);
+    console.log("req.cookies");
     const token = req.cookies.accessToken;
 
     if (!token) {
