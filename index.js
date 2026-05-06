@@ -16,6 +16,8 @@ app.use(cors({
     credentials: true,
 }))
 app.use(express.json());
+
+
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 app.use("/auth", authRoutes);
